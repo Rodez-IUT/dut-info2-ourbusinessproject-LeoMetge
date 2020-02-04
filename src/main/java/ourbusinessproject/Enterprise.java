@@ -76,4 +76,8 @@ public class Enterprise {
     public void setContactEmail(String contactEmail) {
         ContactEmail = contactEmail;
     }
+
+    public Long getId() {
+        return id;
+    }
 }
