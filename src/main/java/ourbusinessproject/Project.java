@@ -16,8 +16,7 @@ public class Project {
     @NotEmpty
     private String title;
     private String description;
-    @NotNull
-    @ManyToOne
+    @NotNull @ManyToOne
     private Enterprise enterprise;
 
     public Project() {

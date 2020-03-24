@@ -5,6 +5,7 @@ import org.hibernate.validator.constraints.Length;
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
+import java.util.List;
 
 @Entity
 public class Enterprise {
@@ -21,6 +22,9 @@ public class Enterprise {
     private String contactName;
     @NotEmpty @Email
     private String contactEmail;
+
+    @OneToMany
+    private List<Project> projects;
 
     public String getName() {
         return name;
@@ -56,6 +60,10 @@ public class Enterprise {
 
     public Long getId() {
         return this.id;
+    }
+
+    public List<Project> getProjects() {
+        return this.projects;
     }
 
 }
