@@ -3,6 +3,8 @@ package ourbusinessproject;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityManager;
+import javax.persistence.Transient;
+import javax.validation.constraints.NotNull;
 import javax.persistence.PersistenceContext;
 
 @Service
@@ -18,18 +20,10 @@ public class EnterpriseProjectService {
         this.entityManager = entityManager;
     }
 
-    public void save(Project project){
-        this.entityManager.persist(project);
+    public void save(Object object){
+        this.entityManager.persist(object);
         this.entityManager.flush();
     }
-
-    public void save(Enterprise enterprise){
-        this.entityManager.persist(enterprise);
-        this.entityManager.flush();
-    }
-
-
-
 
     public EntityManager getEntityManager() {
         return entityManager;
