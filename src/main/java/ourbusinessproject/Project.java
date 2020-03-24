@@ -6,7 +6,7 @@ import javax.validation.constraints.NotNull;
 
 @Entity
 public class Project {
-// pour commit valid fix 2.1.6 relation Enterprise Project
+// pour commit valid fix 2.1.10
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
