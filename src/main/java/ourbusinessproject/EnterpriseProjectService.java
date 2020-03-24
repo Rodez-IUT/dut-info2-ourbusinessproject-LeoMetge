@@ -4,8 +4,10 @@ import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Transient;
+import javax.persistence.TypedQuery;
 import javax.validation.constraints.NotNull;
 import javax.persistence.PersistenceContext;
+import java.util.List;
 
 @Service
 public class EnterpriseProjectService {
@@ -40,5 +42,11 @@ public class EnterpriseProjectService {
 
     public Enterprise findEnterpriseById(Long anId) {
         return this.entityManager.find(Enterprise.class, anId);
+    }
+
+    public List<Project> findAllProjects(){
+        String query = "SELECT p FROM Project p ORDER BY p.title";
+        TypedQuery<Project> queryObj = entityManager.createQuery(query, Project.class);
+        return queryObj.getResultList();
     }
 }

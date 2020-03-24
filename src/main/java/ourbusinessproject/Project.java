@@ -6,7 +6,7 @@ import javax.validation.constraints.NotNull;
 
 @Entity
 public class Project {
-// pour commit valid fix 2.1.10
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
@@ -24,6 +24,12 @@ public class Project {
         if (enterprise != null){
             this.enterprise.addProject(this);
         }
+    }
+
+    public Project(String title, String description, Enterprise enterprise) {
+        this.title=title;
+        this.description = description;
+        this.enterprise = enterprise;
     }
 
     public String getTitle() {
