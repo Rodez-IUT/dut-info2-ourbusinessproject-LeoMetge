@@ -3,13 +3,13 @@ package ourbusinessproject;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityManager;
-import javax.persistence.Transient;
 import javax.persistence.TypedQuery;
-import javax.validation.constraints.NotNull;
+import javax.transaction.Transactional;
 import javax.persistence.PersistenceContext;
 import java.util.List;
 
 @Service
+@Transactional
 public class EnterpriseProjectService {
 
     @PersistenceContext
