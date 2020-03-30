@@ -62,4 +62,10 @@ public class Project {
     public Enterprise getEnterprise() {
         return enterprise;
     }
+
+
+    @Override
+    public String toString() {
+        return "Title : "+ this.title + " Descritpion : "+ this.description + " Entreprise : "+this.enterprise.getName();
+    }
 }

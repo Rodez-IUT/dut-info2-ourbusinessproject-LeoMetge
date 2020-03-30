@@ -1,5 +1,6 @@
 package ourbusinessproject;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.*;
@@ -23,7 +24,7 @@ public class Enterprise {
     private String contactName;
     @NotEmpty @Email
     private String contactEmail;
-    @NotNull @OneToMany(cascade = CascadeType.ALL)
+    @NotNull @OneToMany(mappedBy = "enterprise" ,cascade = CascadeType.ALL)
     private List<Project> projects;
 
     public Enterprise(){
@@ -70,7 +71,13 @@ public class Enterprise {
         this.projects.add(project);
     }
 
+    @JsonIgnore
     public List<Project> getProjects() {
         return projects.isEmpty() ? null : projects;
+    }
+
+    @Override
+    public String toString() {
+        return this.name;
     }
 }
