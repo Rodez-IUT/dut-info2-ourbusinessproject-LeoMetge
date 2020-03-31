@@ -1,0 +1,12 @@
+Réponse pour le fix 2.5.2 generated SQL
+
+Il y a trois requêtes générées pour l'affichage des projets
+
+1- Requête permet la sélection de tout les projets
+select project0_.id as id1_2_, project0_.description as descript2_2_, project0_.enterprise_id as enterpri4_2_, project0_.title as title3_2_ from project project0_ order by project0_.title
+
+2 et 3- Requêtes permettant de récupérer une entreprise lier à un projet précis
+select enterprise0_.id as id1_0_0_, enterprise0_.contact_email as contact_2_0_0_, enterprise0_.contact_name as contact_3_0_0_, enterprise0_.description as descript4_0_0_, enterprise0_.name as name5_0_0_ from enterprise enterprise0_ where enterprise0_.id=?
+select enterprise0_.id as id1_0_0_, enterprise0_.contact_email as contact_2_0_0_, enterprise0_.contact_name as contact_3_0_0_, enterprise0_.description as descript4_0_0_, enterprise0_.name as name5_0_0_ from enterprise enterprise0_ where enterprise0_.id=?
+
+

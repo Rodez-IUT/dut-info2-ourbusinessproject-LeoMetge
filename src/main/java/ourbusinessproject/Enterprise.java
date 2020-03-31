@@ -11,7 +11,7 @@ import java.util.*;
 
 @Entity
 public class Enterprise {
-//pour commit fix #2.3.3 Rest Controller OK
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
