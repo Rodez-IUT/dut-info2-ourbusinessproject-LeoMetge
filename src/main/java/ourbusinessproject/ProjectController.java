@@ -18,9 +18,8 @@ public class ProjectController {
         this.enterpriseProjectService = enterpriseProjectService;
     }
 
-    @JsonIgnore
+
     @RequestMapping("/projectsWithEnterprises")
-    @ResponseBody
     public List<Project> findAllProjectsWithEnterprises() {
         List<Project> projects = enterpriseProjectService.findAllProjects();
 
